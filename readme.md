@@ -1,0 +1,5 @@
+# Hunter's Frontend Personal Project
+
+This web app will allow users to enter text and then display a visualization of the positive or negative content of the text. This will be accomplished using open-source sentiment-analysis apis. The user will also be able to visually comapare the sentiment in two different pieces of text, which could have many interesting uses, from comparing consumer product reviews, pitting Presidential debate answers against one another, or determining whether Kanye or Wiz had the best burn tweets. It will have a fun and interactive interface involving a positivity gauge which dynamically responds to the results of the text-analysis JSON return object.
+
+The page will consist of two containers, each with a text field, submit button, and a Positivity Gauge. The app will send an AJAX request to the AYLIEN Text Analysis API based on the text entered. The results will determine the position of an indicator along a gauge with endpoints of "Positive" and "Negative." Local storage will be utilized to store a users last five analyzed texts. 
