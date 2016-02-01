@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="./Gauge/style.css">
+
+  </head>
+  <body>
+<div class="container">
+  <div class="row">
+        <!-- Box 1 -->
+      <div class="col-sx-12 col-sm-6 col-lg-6">
+        <div class="box">             
+        <div class="icon">
+          <div class="image"><i class="fa fa-thumbs-o-up"></i></div>
+          <div class="info">
+            <h3 class="title">Enter Some Text:</h3>
+            <div class="form-group">
+              <textarea id="text-input" class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <!-- Gauge Element -->
+            <div id="g1"></div>
+
+            <!-- Submit Button -->
+            <button id="submit" type="submit" class="btn btn-default">submit</button>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+
+
+    <!-- Box 2 -->
+    <div class="col-sx-12 col-sm-6 col-lg-6">
+      <div class="box">             
+        <div class="icon">
+          <div class="image"><i class="fa fa-thumbs-o-up"></i></div>
+          <div class="info">
+            <h3 class="title">Enter Some Text:</h3>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <!-- Gauge Element -->
+            <div id="g2"></div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-default">submit</button>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+
+    
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script src="./Gauge/raphael-2.1.4.min.js"></script>
+<script src="./Gauge/justgage.js"></script>
+<script src="./Gauge/app.js"></script>
+
+</body>
+</html>
