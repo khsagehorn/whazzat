@@ -21,6 +21,6 @@ var g1;
           label: "Negativity"
         });
         setInterval(function() {
-          g1.refresh(getRandomInt(0, 100));
+          g1.refresh(getRandomInt(0, 100)); g2.refresh(getRandomInt(0, 100));
         }, 2500);
       };

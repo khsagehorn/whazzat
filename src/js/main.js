@@ -5,19 +5,27 @@ $(document).on('ready', function() {
   $("#submit").on("click", function(event){
     event.preventDefault();
     var text = $("#text-input").val();
-    getWeather(location);
+    testText(text);
   });
 });
 
-function getWeather(location) {
-  var baseURL = "http://api.openweathermap.org/data/2.5/weather?q=";
-  var apiKey = "&appid=11b4e2aa51067d3162de79fbcd05ee80";
-  $.ajax({
-    url: baseURL + location + apiKey,
-    success: function(json) {
-
-
-
+function testText(text) {
+ 
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.aylien.com/api/v1/sentiment?mode=tweet&text=Look%20at%20this%20shit.%20Look%20at%20it.",
+    "method": "GET",
+    "headers": {
+      "x-aylien-textapi-application-key": "ad58061c07dc1f78e7627809a9482ca8",
+      "x-aylien-textapi-application-id": "f725efbf",
+      "cache-control": "no-cache",
+      // "postman-token": "5a447de6-15a9-a741-a9e3-3f8d0b53a126"
     }
+  }
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
   });
-}
+};
+
