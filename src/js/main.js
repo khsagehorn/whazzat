@@ -1,6 +1,7 @@
-// add scripts
+// declare global variables for gauges
 var g1, g2;
 
+// set default gauge vaules on page load
 window.onload = function(){
   g1 = new JustGage({
     id: "g1",
@@ -25,17 +26,7 @@ window.onload = function(){
   });     
 };
 
-// window.myCallback = function (data) {
-//   console.log('your response:', data);
-
-//   refreshGauge1(data);
-    
-//   refreshGauge2(data);
-    
-//   console.log(data.docSentiment.score);
-
-// }
-
+//functions to reset gauge values
 function refreshGauge1(data){
   g1.refresh(data.docSentiment.score*100);
 
@@ -45,7 +36,8 @@ function refreshGauge2(data){
   g2.refresh(data.docSentiment.score*100);
 }
 
- // get text from text boxes on click, and run the ajax request
+ // get text from text boxes on click, and run the ajax request based on that data
+ // with the returned jsonp callback, run the gague resfresh functions
 $(document).on('ready', function() {
 
   $("#submit").on("click", function(event){
@@ -55,9 +47,9 @@ $(document).on('ready', function() {
     testText(text);
 
     window.myCallback = function (data) {
-      console.log('your response:', data);
 
       refreshGauge1(data);
+
     }
 
   });
@@ -69,7 +61,6 @@ $(document).on('ready', function() {
     testText(text);
 
     window.myCallback = function (data) {
-      console.log('your response:', data);
 
       refreshGauge2(data);
     }
@@ -97,6 +88,23 @@ function testText(text) {
   $.ajax(settings);
 
 };
+
+
+$("#quotes").on("click", function(){
+  $("#text-input1").val("It is time to bring our neighbors out of the shadows. It is time to give them legal status. It is time to create a reasonable path to citizenship.");
+  $("#text-input2").val("They're going to have to go out. They can come back, but they're gonna have to go out.");
+})
+
+$("#reviews").on("click", function(){
+  $("#text-input1").val("Best paired with my favorite Oreo variant!");
+  $("#text-input2").val("Do you have any idea where this stuff comes from? It's excreted by squeezing the wobbly thingie on the UNDERSIDE OF A COW! That's hardly made clear anywhere on the label.");
+})
+
+$("#tweets").on("click", function(){
+  $("#text-input1").val("Bro first of all you stole your whole shit from Cudi");
+  $("#text-input2").val("I went to look at your twitter and you were wearing cool pants");
+})
+
 
 
 
