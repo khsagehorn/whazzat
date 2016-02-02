@@ -8,8 +8,9 @@ window.onload = function(){
     min: -100,
     relativeGaugeSize: true,
     max: 100,
+    clicked: false,
  
-    label: "Sentiment"
+    label: "MEAN  or  NICE"
   });
 
   g2 = new JustGage({
@@ -18,28 +19,30 @@ window.onload = function(){
     min: -100,
     relativeGaugeSize: true,
     max: 100,
+    clicked: false,
  
-    label: "Sentiment"
-  });
-  // setInterval(function() {
-  //   // g1.refresh(getRandomInt(0, 100));
-  //     g2.refresh(getRandomInt(0, 100));
-  // }, 2500);
-
-
-
-        
+    label: "MEAN or NICE"
+  });     
 };
 
-window.myCallback = function (data) {
-  console.log('your response:', data);
-  // $("#value").html(data.docSentiment.score);
-          
+// window.myCallback = function (data) {
+//   console.log('your response:', data);
+
+//   refreshGauge1(data);
+    
+//   refreshGauge2(data);
+    
+//   console.log(data.docSentiment.score);
+
+// }
+
+function refreshGauge1(data){
   g1.refresh(data.docSentiment.score*100);
+
+}
+
+function refreshGauge2(data){
   g2.refresh(data.docSentiment.score*100);
-  console.log(data.docSentiment.score);
-
-
 }
 
  // get text from text boxes on click, and run the ajax request
@@ -51,6 +54,12 @@ $(document).on('ready', function() {
 
     testText(text);
 
+    window.myCallback = function (data) {
+      console.log('your response:', data);
+
+      refreshGauge1(data);
+    }
+
   });
 
   $("#submit2").on("click", function(event){
@@ -58,6 +67,12 @@ $(document).on('ready', function() {
     var text = $("#text-input2").val();
 
     testText(text);
+
+    window.myCallback = function (data) {
+      console.log('your response:', data);
+
+      refreshGauge2(data);
+    }
 
   });
 });
