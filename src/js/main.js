@@ -1,13 +1,48 @@
 // add scripts
+var g1, g2;
+
+window.onload = function(){
+  g1 = new JustGage({
+    id: "g1",
+    value: 0,
+    min: -100,
+    relativeGaugeSize: true,
+    max: 100,
+ 
+    label: "Sentiment"
+  });
+
+  g2 = new JustGage({
+    id: "g2",
+    value: 0,
+    min: -100,
+    relativeGaugeSize: true,
+    max: 100,
+ 
+    label: "Sentiment"
+  });
+  // setInterval(function() {
+  //   // g1.refresh(getRandomInt(0, 100));
+  //     g2.refresh(getRandomInt(0, 100));
+  // }, 2500);
+
+
+
+        
+};
 
 window.myCallback = function (data) {
   console.log('your response:', data);
-
-  $("#value").html(data.docSentiment.score);
+  // $("#value").html(data.docSentiment.score);
+          
+  g1.refresh(data.docSentiment.score*100);
+  g2.refresh(data.docSentiment.score*100);
+  console.log(data.docSentiment.score);
 
 
 }
 
+ // get text from text boxes on click, and run the ajax request
 $(document).on('ready', function() {
 
   $("#submit").on("click", function(event){
@@ -15,9 +50,20 @@ $(document).on('ready', function() {
     var text = $("#text-input1").val();
 
     testText(text);
+
+  });
+
+  $("#submit2").on("click", function(event){
+    event.preventDefault();
+    var text = $("#text-input2").val();
+
+    testText(text);
+
   });
 });
 
+
+// this is the ajax request
 function testText(text) {
   var baseURL = "http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment";
   var apiKey = "?apikey=abedd417c29793469d729bb648c5f7bcd56e583f";
