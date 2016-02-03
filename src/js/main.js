@@ -1,10 +1,5 @@
-// declare global variables for gauges
-var g1, g2;
 
-// $(function() {
-//    $("#myModal").modal();
-// });
-
+// show modal on page load
 $(window).load(function(){
   $('#myModal').modal('show');
 });
@@ -37,20 +32,6 @@ window.onload = function(){
 
 };
 
-// launch modal on pageload
-
-
-
-
-//functions to reset gauge values
-function refreshGauge1(data){
-  g1.refresh(data.docSentiment.score*100);
-
-}
-
-function refreshGauge2(data){
-  g2.refresh(data.docSentiment.score*100);
-}
 
  // get text from text boxes on click, and run the ajax request based on that data
  // with the returned jsonp callback, run the gague resfresh functions
@@ -86,27 +67,7 @@ $(document).on('ready', function() {
 });
 
 
-// this is the ajax request
-function testText(text) {
-  var baseURL = "http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment";
-  var apiKey = "?apikey=abedd417c29793469d729bb648c5f7bcd56e583f";
-  var outputMode = "&outputMode=json&jsonp=myCallback";
-  var textURI = "&text=" + encodeURI(text);
- 
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": baseURL + apiKey + outputMode + textURI,
-    // "url": "http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment?apikey=abedd417c29793469d729bb648c5f7bcd56e583f&outputMode=json&jsonp=myCallback&text=This%2520was%2520a%2520terrible%2520idea%252C%2520you%2520know.",
-    "method": "GET",
-    "dataType": 'jsonp'
-}
-
-  $.ajax(settings);
-
-};
-
-
+// populate text boxes with exaple text
 $("#quotes").on("click", function(){
   $("#text-input1").val("It is time to bring our neighbors out of the shadows. It is time to give them legal status. It is time to create a reasonable path to citizenship.");
   $("#text-input2").val("They're going to have to go out. They can come back, but they're gonna have to go out.");

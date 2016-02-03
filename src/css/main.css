@@ -13,6 +13,10 @@
 .btn-default { font-family: "Quicksand",sans-serif; background-color: orange; color: #FFFFFF;}
 .btn-default:hover { background-color: #FFFFFF; color: black;}
 
+body {
+  background-color: #FBFBF2;
+}
+
 .form-group {
   margin: 15px;
 }
@@ -51,5 +55,15 @@
 .panel > button:nth-of-type(3):hover {
   background-color: #B52F26;
   color: #E5E6E4;
+}
+
+
+#learn:hover {
+  background-color: orange;
+  color: #E5E6E4;
+}
+
+button:focus, .btn:focus {
+  outline: 0;
 }
 
