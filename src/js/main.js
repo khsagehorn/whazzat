@@ -1,15 +1,26 @@
 // declare global variables for gauges
 var g1, g2;
 
+// $(function() {
+//    $("#myModal").modal();
+// });
+
+$(window).load(function(){
+  $('#myModal').modal('show');
+});
+
+
+
 // set default gauge vaules on page load
 window.onload = function(){
+
+
   g1 = new JustGage({
     id: "g1",
     value: 0,
     min: -100,
     relativeGaugeSize: true,
     max: 100,
-    clicked: false,
  
     label: "MEAN  or  NICE"
   });
@@ -20,11 +31,16 @@ window.onload = function(){
     min: -100,
     relativeGaugeSize: true,
     max: 100,
-    clicked: false,
  
     label: "MEAN or NICE"
-  });     
+  });
+
 };
+
+// launch modal on pageload
+
+
+
 
 //functions to reset gauge values
 function refreshGauge1(data){
@@ -66,6 +82,7 @@ $(document).on('ready', function() {
     }
 
   });
+
 });
 
 
