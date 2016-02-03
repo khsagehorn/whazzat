@@ -1,0 +1,9 @@
+{
+  "firebase": "whazzat",
+  "public": "src",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
