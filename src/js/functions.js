@@ -3,7 +3,7 @@
 
 // this is the ajax request
 function testText(text) {
-  var baseURL = "http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment";
+  var baseURL = "https://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment";
   var outputMode = "&outputMode=json&jsonp=myCallback";
   var textURI = "&text=" + encodeURI(text);
  

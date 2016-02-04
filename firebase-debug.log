@@ -1,0 +1,18 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /Users/klaussagehorn/.npm-packages/bin/firebase deploy
+[debug] Platform:     darwin
+[debug] Node Version: v4.2.4
+[debug] Time:         Thu Feb 04 2016 10:10:44 GMT-0700 (MST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/whazzat/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/whazzat/token?token=XXX 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'whazzat'...
+[info] 
+[info] i  deploying hosting
+[info] i  preparing src directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/firebase/whazzat/uploads/-K9hFwUG8BwlpHXBuRS2?token=XXX&fileCount=9&message= 
+[debug] <<< HTTP RESPONSE 200

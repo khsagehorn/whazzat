@@ -83,6 +83,13 @@ $("#tweets").on("click", function(){
   $("#text-input2").val("I went to look at your twitter and you were wearing cool pants");
 })
 
+$("#comments").on("click", function(){
+  $("#text-input1").val("If it takes a leftist to right the ship, so be it. The current state of affairs is untenable. This lifelong Republican will vote for Sanders if he wins his party's nomination. I will be part of the effort for serious, rational, comprehesive change. May we be fortunate enough to see this come to pass. ");
+  $("#text-input2").val("In name of all of us from the Old World, I would like to thank the author of this recipe for adding the amounts in grams. All hail universally understandable measurements!");
+})
+
+
+
 
 
 
