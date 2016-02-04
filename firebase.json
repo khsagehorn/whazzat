@@ -1,6 +1,6 @@
 {
   "firebase": "whazzat",
-  "public": "src",
+  "public": ".",
   "ignore": [
     "firebase.json",
     "**/.*",
